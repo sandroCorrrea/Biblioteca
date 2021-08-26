@@ -24,6 +24,6 @@ const Admin = database.define('administradores', {
     }
 })
 
-// Admin.sync({force: false});
+Admin.sync({force: false});
 
 module.exports = Admin;

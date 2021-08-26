@@ -19,6 +19,6 @@ const Post = database.define('posts', {
 
 Post.belongsTo(Category);
 
-// Post.sync({force: false});
+Post.sync({force: false});
 
 module.exports = Post;

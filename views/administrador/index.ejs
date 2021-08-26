@@ -1,0 +1,54 @@
+<%- include('../../partials/head.ejs') %>
+<link rel="stylesheet" type="text/css" href="/css/indexAdmin.css">
+<%- include('../../partials/head2.ejs') %>
+<body>
+    <%- include('../../partials/navAdmin.ejs') %>
+
+    <section class="sectionIndex">
+        <div>
+            <header>
+                <h1 class="display-3">Bem vindo ao Painel Administrativo!</h1>
+            </header>
+        </div>
+    </section>
+    <div class="container mt-4 mb-5">
+        <hr>
+        <h1 class="display-5">Principais Atividades</h1>
+        <div class="card-group">
+            <div class="card">
+                <a class="imgCard" href="/admin/show">
+                    <img src="/img/pessoa-de-negocios.png" width="50%">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Cadastrar Administrador</h5>
+                    <p class="card-text">Aqui podemos cadastrar Administradores, onde eles teram poder de excluir, editar dados de Categorias
+                        , Administradores ou até mesmo postagens, para o usuário.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <a class="imgCard" href="/admin/categories/show">
+                    <img src="/img/biblioteca-online.png" width="50%">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Cadastrar Categoria de Livro</h5>
+                    <p class="card-text">Aqui é possivel cadastrar a categoria de um livro como Romance, Ação e etc...</p>
+                    <p class="card-text">Quando cadastramos uma categoria, ela aparecerá como uma opção no cadastro de um livro.</p>
+                </div>
+            </div>
+            <div class="card">
+                <a class="imgCard" href="/admin/post/show">
+                    <img src="/img/branding.png" width="50%">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Realizar Postagens</h5>
+                    <p class="card-text">Aqui você poderá realizar postagens, sobre os livros ou algum assunto envolto das categorias,
+                        cada postagem feita aqui, aparecerá para o usuário.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<%- include('../../partials/footer.ejs') %>

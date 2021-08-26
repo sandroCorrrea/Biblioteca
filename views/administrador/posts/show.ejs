@@ -1,0 +1,44 @@
+<%- include('../../../partials/head.ejs') %> 
+    <link rel="stylesheet" type="text/css" href="/css/newAdmin.css">
+<%- include('../../../partials/head2.ejs') %> 
+    <body>
+        <%- include('../../../partials/navAdmin.ejs') %>
+        <div class="container mb-5">
+            <div class="card" id="cardAdmin">
+                <div class="card-header">
+                    <hr>
+                    <a class="btn btn-success" href="/admin/post/new">Fazer nova Publicação</a>
+                    <img src="/img/logo_doctum.svg" width="120px" style="float: right;">
+                    <hr>
+                </div>
+            </div>
+            <hr>
+            <h1 class="display-6" style="text-align: center;">Lista de Publicações</h1>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>CATEGORIA</th>
+                        <th>TÍTULO</th>
+                        <th>AÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% posts.forEach(post => { %>
+                        <tr>
+                            <th><%= post.id %> </th>
+                            <th><%= post.category.title %> </th>
+                            <th><%= post.title %> </th>
+                            <th>
+                                <form method="POST" action="/admin/post/delete" style="display: inline;" onsubmit="confirmDelete(event)">
+                                    <button class="btn btn-danger" value="<%= post.id %>" name="id">Excluir</button>
+                                </form>
+                                <a class="btn btn-warning" href="/admin/post/edit/<%= post.id %>">Editar</a>
+                            </th>
+                        </tr>
+                   <% }) %> 
+                </tbody>
+            </table>
+        </div>
+    </body>
+<%- include('../../../partials/footer.ejs') %> 

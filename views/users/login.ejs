@@ -1,0 +1,33 @@
+<%- include('../../partials/head.ejs') %>
+<link rel="stylesheet" type="text/css" href="/css/index.css">
+<%- include('../../partials/head2.ejs') %>
+<body>
+    <%- include('../../partials/nav.ejs') %>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <hr>
+                <h6 class="display-6">Login</h6>
+                <img src="/img/login.png" class="imgLogo">
+                <hr>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/login/save">
+                    <div class="form-floating">
+                        <input type="email" name="email" placeholder=" " class="form-control">
+                        <label>Email</label>
+                    </div>
+                    <br><div class="form-floating">
+                        <input type="password" name="password" placeholder=" " class="form-control">
+                        <label>Senha</label>
+                    </div>
+                    <br><div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-success">Entrar</button>
+                        <a class="btn btn-warning" href="/register">Cadastrar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include('../../partials/footer.ejs') %>

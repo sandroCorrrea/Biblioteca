@@ -1,0 +1,54 @@
+body
+{
+    background-color:#3AC0FF;
+}
+label
+{
+    color: black;
+}
+li
+{
+    list-style: none;
+}
+i
+{
+    font-size: 20px;
+    margin-left: 2vh;
+}
+#cardAdmin
+{
+    background-color: black;
+    color: white;
+}
+#cardText
+{
+    text-align: center;
+}
+
+#liNavAdmin
+{
+    margin-left: 5vh;
+}
+
+.container
+{
+    margin-top: 20vh;
+}
+
+.nav-link
+{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-link:hover
+{
+    color: black;
+    font-size: 25px;
+}
+
+.imgLogo
+{
+    width: 80px;
+    height: 80px;
+}

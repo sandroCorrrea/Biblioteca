@@ -1,0 +1,96 @@
+body
+{
+    background-color:#3AC0FF;
+}
+li
+{
+    list-style: none;
+}
+i
+{
+    font-size: 20px;
+    margin-left: 2vh;
+}
+label
+{
+    color: black;
+}
+#liNavAdmin
+{
+    margin-left: 5vh;
+}
+.nav-link
+{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-link:hover
+{
+    border: 1px solid white;
+
+}
+
+.imgLogo
+{
+    width: 80px;
+    height: 80px;
+}
+
+.msgIndex
+{
+    margin-top: 20vh;
+    width: 100%;
+    height: 400px;
+    background-image: url('/img/bibliotecaIndex.png');
+}
+
+/* COMEÇO DA ANIMÇÃO */
+.line
+{
+    border-right: 2px solid rgb(102, 98, 98);
+    width: 660px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: black;
+}
+
+.cursorTitle
+{
+    animation: cursor 500ms steps(40) infinite normal, 
+    textAnimation 4s steps(40) 1s normal;
+}
+
+@keyframes textAnimation {
+    from{
+        width: 0;
+    }
+    to
+    {
+        width: 690px;
+    }
+}
+
+@keyframes cursor {
+    from {
+        border-right: 2px solid rgb(102, 98, 98);
+    }
+    to{
+        border-right: transparent;
+    }
+}
+/* FINAL DA ANIMÇÃO */
+
+.container
+{
+    margin-top: 20vh;
+}
+.card-header
+{
+    text-align: center;
+}
+.card
+{
+    background-color: black;
+    color: white;
+}

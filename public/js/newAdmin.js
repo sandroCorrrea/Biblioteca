@@ -10,3 +10,17 @@ var confirmDelete = (event) => {
         event.preventDefault();
     }
 }
+
+var confirmDrop = (event) => 
+{
+    var option = confirm("Deseja Realmente Alugar o Livro: ");
+
+    if (option)
+    {
+
+    }
+    else
+    {
+        event.preventDefault();
+    }
+}

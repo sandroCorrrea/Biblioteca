@@ -24,7 +24,7 @@ router.post('/admin/post/save',adminAuth, (req, res) => {
         body: body,
         categoryId: categoryId,
     }).then(() => {
-        res.redirect('/admin/post/new');
+        res.redirect('/admin/post/show');
     }).catch(erro => {
         res.send('Erro');
     })

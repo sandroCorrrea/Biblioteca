@@ -1,0 +1,23 @@
+<%- include('../../partials/head.ejs') %> 
+<link rel="stylesheet" type="text/css" href="/css/index.css">
+<%- include('../../partials/head2.ejs') %> 
+<body>
+    <%- include('../../partials/nav.ejs') %> 
+    <div class="container" style="margin-top: 20vh;">
+        <section>
+            <hr>
+            <img src="/img/livros.png" class="imgArchive">
+            <h1 class="display-5" style="float: right;">Achamos o seu livro</h1>
+        </section>
+        <hr>
+        <h6 class="display-6">Nome: <%= books.name %> </h6>
+        <h6 class="display-6">Autor: <%= books.author %> </h6>
+        <h6 class="display-6">Categoria: <%= books.category.title %> </h6>
+        <hr>
+        <a class="btn btn-success" href="/book">
+            <i class='bx bx-left-arrow-alt'></i>
+            Voltar para Biblioteca
+        </a>
+    </div>
+</body>
+<%- include('../../partials/footer.ejs') %> 

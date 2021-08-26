@@ -1,0 +1,42 @@
+<%- include('../../partials/head.ejs') %>
+<link rel="stylesheet" type="text/css" href="/css/index.css">
+<%- include('../../partials/head2.ejs') %>
+<body>
+    <%- include('../../partials/nav.ejs') %>
+    
+    <section class="biblioteca">
+        <header>
+            <hr>
+            <h4 class="display-6 nameBiblioteca"><b>Veja nosso livros Disponíveis</b></h4>
+        </header>
+    </section>
+    <div class="container mt-5">
+        <% books.forEach(book => { %>
+            <div class="card mb-3" style="max-width: 100%;" id="listBook">
+                <div class="row g-0">
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h6 style="float: right;">Livro Nº: <%= book.id  %> </h6>
+                      <h4 class="display-6" style="color:darkturquoise;">Detalhes</h4>
+                      <h5 class="card-title"><div class="marcacao">Nome:</div> <%= book.name  %> </h5>
+                      <h6 class="card-title"><div class="marcacao">Número de Páginas:</div> <%= book.numberPages  %> </h6>
+                      <h6 class="card-title"><div class="marcacao">Categoria:</div> <%= book.category.title  %> </h6>
+                      <h6 class="card-title"><div class="marcacao">Autor:</div> <%= book.author %> </h6>
+                      <h6 class="card-title"><div class="marcacao">Resumo:</div> <%= book.summary %> </h6>
+                      <div class="d-grid">
+                          <form method="POST" action="/user/drop" onsubmit="confirmDrop(event)">
+                              <div class="d-grid">
+                                <button class="btn bg-success" name="id" value="<%= book.id %>">Alugar</button>
+                              </div>
+                          </form>
+                          <hr>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        <% }); %> 
+    </div>
+    <hr>
+</body>
+<%- include('../../partials/footer.ejs') %>

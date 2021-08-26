@@ -46,6 +46,72 @@ app.get('/' , (req , res)=>{
     res.render('users/index');
 });
 
+app.get('/posts' , (req , res)=>{
+    Post.findAll().then(posts => {
+        res.render('users/posts', {
+            posts: posts,
+        });
+    })
+});
+
+app.get('/book' , (req , res)=>{
+    Book.findAll(
+        {
+            include: [{model: Category}],
+            order: [['id', 'DESC']]
+        }
+    ).then(books => {
+        res.render('users/book', {
+            books: books,
+        });
+    });
+});
+
+app.post('/user/drop' , (req , res)=>{
+    var id = req.body.id;
+
+    if (isNaN(id))
+    {
+        res.redirect('/book');
+    }
+    Book.destroy({
+        where: {id: id}
+    }).then(book => {
+        if (book != undefined)
+        {
+            res.redirect('/book');
+        }
+        else
+        {
+            res.redirect('/book');
+        }
+    }).catch(erro => {
+        res.redirect('/book');
+    });
+});
+
+app.get('/book/search' , (req , res)=>{
+   res.render('users/search');
+})
+
+app.post('/book/search/now' , (req , res)=>{
+    var search = req.body.search;
+    Book.findOne({
+        include: [{model: Category}],
+        where: {name: search}
+    }).then(books => {
+        if (books.name == search)
+        {
+            res.render('events/trueBook', {
+                books: books,
+            });
+        }
+    }).catch(erro => {
+        res.render('events/falseBook');
+    });
+});
+
+
 const port = process.env.PORT || 8080;
 
 app.listen(port, (erro) => {

@@ -1,0 +1,26 @@
+<%- include('../../partials/head.ejs') %>
+<link rel="stylesheet" type="text/css" href="/css/index.css">
+<%- include('../../partials/head2.ejs') %>
+<body>
+    <%- include('../../partials/nav.ejs') %>
+    <div class="container">
+        <hr>
+        <h2 class="display-4">Veja nossa Postagens!</h2>
+        <img src="/img/postagens2.png" width="80%" height="380px">
+
+        <h2 class="display-5">Aqui estão algumas das nossas postagens!</h2>
+        <% posts.forEach(post => { %>
+            <div class="card mt-3 mb-5">
+                <div class="card-header mt-3">
+                    <hr>
+                    <h5 class="display-6"><%= post.title %></h5>
+                    <hr>
+                </div>
+                <div class="card-body">
+                    <%- post.body %>
+                </div>
+            </div>
+        <% }) %> 
+    </div>
+</body>
+<%- include('../../partials/footer.ejs') %>

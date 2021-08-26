@@ -27,6 +27,6 @@ const Book = database.define('books', {
 
 Book.belongsTo(Category);
 
-Book.sync({force: false});
+// Book.sync({force: false});
 
 module.exports = Book;

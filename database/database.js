@@ -9,7 +9,7 @@ const database = new Sequelize('heroku_5efa85e8660fbf3', 'b0ff0dcb09dc6a', '2c21
 })
 
 
-//CONEXAO COM UM BANCO LOCAL
+// CONEXAO COM UM BANCO LOCAL
 // const database = new Sequelize('biblioteca', 'root', 'scrj123456', {
 //     host: 'localhost',
 //     dialect: 'mysql',

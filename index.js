@@ -95,16 +95,20 @@ app.get('/book/search' , (req , res)=>{
 })
 
 app.post('/book/search/now' , (req , res)=>{
-    var search = req.body.search;
+    var name = req.body.name;
     Book.findOne({
         include: [{model: Category}],
-        where: {name: search}
+        where: {name: name}
     }).then(books => {
-        if (books.name == search)
+        if (books != undefined)
         {
             res.render('events/trueBook', {
                 books: books,
-            });
+            });        
+        }
+        else
+        {
+            res.render('events/falseBook');
         }
     }).catch(erro => {
         res.render('events/falseBook');
